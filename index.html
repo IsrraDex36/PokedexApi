@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Profesional</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="pattern"></div>
+    <div class="pokeball-large" style="top: -150px; right: -150px;"></div>
+    <div class="pokeball-large" style="bottom: -150px; left: -150px;"></div>
+
+    <div class="pagd">
+        <div class="pokedex-container">
+            <header class="pokedex-header">
+                <div class="lights">
+                    <div class="light red"></div>
+                    <div class="light yellow"></div>
+                    <div class="light green"></div>
+                </div>
+                <h1>POKÉDEX</h1>
+            </header>
+            
+            <main class="pokedex-body">
+                <div class="screen-container">
+                    <div class="screen" id="result">
+                        <div class="welcome-message">
+                            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif" alt="Pikachu">
+                            <p>¡Bienvenido a la Pokédex!</p>
+                            <p>Busca un Pokémon por nombre o número</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="pokemon-form" class="search-form">
+                    <div class="input-group">
+                        <input type="text" id="pokemon-name" placeholder="Ej: Pikachu o 25" autocomplete="off">
+                        <button type="submit" class="search-button">
+                            <span>BUSCAR</span>
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="pokedex-controls">
+                    <button class="control-button" id="random-pokemon">ALEATORIO</button>
+                    <button class="control-button" id="reset-button">RESET</button> 
+                </div>
+            </main>
+            
+            <footer class="pokedex-footer">
+                <div class="footer-details">
+                    <p>Pokédex Profesional</p>
+                    <p>Datos de <a href="https://pokeapi.co/" target="_blank">PokéAPI</a></p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Reproductor de audio -->
+    <audio id="bg-music" loop>
+        <source src="assets/music/pokemon-theme.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <!-- Controles de música -->
+    <div class="music-controls">
+        <button id="music-toggle">🔊</button>
+        <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.0">
+    </div>
+
+    <!-- Botón de control de voz -->
+    <div class="voice-controls">
+        <button id="toggle-voice">🔊 Voz ON</button>
+    </div>
+
+    <!-- Efecto de sonido oculto -->
+    <audio id="pokedex-blip" src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3" preload="auto"></audio>
+        
+    <script src="js/script.js"></script> 
+</body>
+</html>
